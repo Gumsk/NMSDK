@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Type
 from io import BufferedWriter, BufferedReader
 from dataclasses import dataclass
 import struct
@@ -311,7 +311,7 @@ NAMEHASH_MAPPING = {
     "TkModelDescriptorList": 0x4026294F,
 }
 
-STRUCT_MAPPING: dict[int, datatype] = {
+STRUCT_MAPPING: dict[int, Type[datatype]] = {
     0x8E7F1986: TkAnimMetadata,
     0x3DB87E47: TkSceneNodeData,
     0x819C3220: TkGeometryData,

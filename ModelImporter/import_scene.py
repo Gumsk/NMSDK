@@ -188,7 +188,7 @@ class ImportScene():
                 self.PCBANKS_dir,
                 self.scene_node_data.Attribute('GEOMETRY') + '.PC')
 
-        self.descriptor_data = dict()
+        self.descriptor_data = TkModelDescriptorList([])
 
         self.geometry_stream_file = self.geometry_file.replace('GEOMETRY', 'GEOMETRY.DATA')
 
