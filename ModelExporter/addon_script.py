@@ -686,7 +686,7 @@ class Exporter():
                     uv = uv_layer_data[li].uv
                     uvs[vi] = (uv[0], 1 - uv[1], 0, 1)
                 else:
-                    # Calculate the ev value to write then compare it to what
+                    # Calculate the uv value to write then compare it to what
                     # we have already to see if we need to split the vert.
                     uv = uv_layer_data[li].uv
                     uv = (uv[0], 1 - uv[1], 0, 1)

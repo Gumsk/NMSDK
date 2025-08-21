@@ -302,9 +302,12 @@ class Export():
             #     indexes = array('H', new_indexes)
             # i_data = serialize_index_stream(indexes)
             i_data = self.np_indexes[i]
-            if self.Indices16Bit:
-                i_data = i_data.astype(np.uint16)
-            i_data = i_data.tobytes()
+            if (max_idx := max(i_data)) > 0xFFFF:
+                raise ValueError(
+                    f"The mesh {name} has too many vertexes (max index found = {max_idx}). "
+                    "Please simplify the model to export."
+                )
+            i_data = i_data.astype(np.uint16).tobytes()
             i_len = len(i_data)
             index_sizes.append(i_len)
             md = TkMeshData(
